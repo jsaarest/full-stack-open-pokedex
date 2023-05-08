@@ -1,0 +1,21 @@
+# fly.toml app configuration file generated for jsaarest-fullstack-open-pokedex on 2023-05-08T10:32:06+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "jsaarest-fullstack-open-pokedex"
+primary_region = "arn"
+
+[deploy]
+  release_command = "npm run build"
+
+[env]
+  PORT = "8080"
+
+[processes]
+  app = "node app.js"
+
+[[services]]
+  protocol = ""
+  internal_port = 8080
+  processes = ["app"]
