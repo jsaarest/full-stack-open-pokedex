@@ -1,4 +1,4 @@
-const API_BASE_PATH = 'http://localhost:5000'
+const API_BASE_PATH = 'http://localhost:8080'
 
 describe('template spec', () => {
   it('front page can be opened', function() {
