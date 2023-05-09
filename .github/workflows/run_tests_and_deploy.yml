@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize]
 
 jobs:
   run_tests:
@@ -29,6 +33,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
   deploy:
+      if: ${{ github.event_name == 'push' }}
       name: Deploy app
       needs: run_tests
       runs-on: ubuntu-20.04
